@@ -16,18 +16,14 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 import {
-  ExtractFormFieldType,
-  filterValidInputProps,
-  FormField,
-} from "@/types/generic-form.types";
-
-import {
   Modal,
   ModalContent,
   ModalHeader,
   ModalBody,
   ModalFooter,
 } from "@nextui-org/react";
+
+import { ExtractFormFieldType } from "@/types/generic-form.types";
 
 interface FormRendererProps<T extends FieldValues> {
   fields: ExtractFormFieldType<T>;
@@ -53,8 +49,8 @@ const FormRenderer = <T extends FieldValues>({
               Modal Title
             </ModalHeader>
             <form
-              onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col align-middle"
+              onSubmit={handleSubmit(onSubmit)}
             >
               <ModalBody>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -63,16 +59,16 @@ const FormRenderer = <T extends FieldValues>({
                     <Controller
                       key={name}
                       control={control}
-                      name={name as Path<T>}
                       defaultValue={"" as PathValue<T, Path<T>>}
+                      name={name as Path<T>}
                       render={({ field: { onChange, onBlur, value } }) => (
                         <div>
                           {field.type === "select" ? (
                             <Dropdown className="w-full">
                               <DropdownTrigger className="w-full">
                                 <Button
-                                  variant="bordered"
                                   className="capitalize"
+                                  variant="bordered"
                                 >
                                   {value || field.label}
                                 </Button>
@@ -82,6 +78,7 @@ const FormRenderer = <T extends FieldValues>({
                                 selectionMode="single"
                                 onSelectionChange={(keys) => {
                                   const [selectedValue] = [...keys];
+
                                   onChange(selectedValue);
                                 }}
                               >
@@ -100,18 +97,18 @@ const FormRenderer = <T extends FieldValues>({
                           ) : (
                             <Input
                               required
+                              placeholder={field.label.toUpperCase()}
                               type={field.type}
                               value={
                                 typeof value === "number"
                                   ? value.toString()
                                   : value
                               }
-                              onChange={onChange}
                               onBlur={(e) => {
                                 onBlur();
                                 // Additional onBlur logic if necessary
                               }}
-                              placeholder={field.label.toUpperCase()}
+                              onChange={onChange}
                               {...field.attributes}
                             />
                           )}
@@ -126,7 +123,7 @@ const FormRenderer = <T extends FieldValues>({
               <Button color="danger" variant="light" onPress={onClose}>
                 Close
               </Button>
-              <Button type="submit" className="mt-4">
+              <Button className="mt-4" type="submit">
                 Submit
               </Button>
             </ModalFooter>

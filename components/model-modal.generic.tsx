@@ -2,9 +2,10 @@
 
 import React, { useEffect } from "react";
 import { Button } from "@nextui-org/button";
-import FormRenderer from "@/components/form-renderer";
 import { FieldValues } from "react-hook-form";
 import { useDisclosure } from "@nextui-org/react";
+
+import FormRenderer from "@/components/form-renderer";
 import {
   createFormFields,
   ExtractFormFieldType,
@@ -19,10 +20,11 @@ export default function OpenModelModalFormButton<T extends FieldValues>({
 }: ModelModalProps<T>) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const formFields: ExtractFormFieldType<T> = createFormFields<T>(fieldKeys);
-  useEffect(() => {
-    debugger;
-    console.log("Fields:", formFields);
-  }, []);
+
+  // useEffect(() => {
+  //   debugger;
+  //   console.log("Fields:", formFields);
+  // }, []);
 
   const handleSubmit = (data: T) => {
     console.log("Form data submitted:", data);
@@ -37,9 +39,9 @@ export default function OpenModelModalFormButton<T extends FieldValues>({
       {isOpen && (
         <FormRenderer<T>
           fields={formFields}
-          onSubmit={handleSubmit}
-          onOpenChange={onOpenChange}
           isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          onSubmit={handleSubmit}
         />
       )}
     </>

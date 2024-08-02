@@ -29,6 +29,7 @@ export function createFormFields<T>(
       label: String(key),
       attributes: {},
     };
+
     return acc;
   }, {} as ExtractFormFieldType<T>);
 }
@@ -67,11 +68,13 @@ export const filterValidInputProps = (
   props: Record<string, any> | undefined,
 ) => {
   if (!props) return {};
+
   return Object.keys(props)
     .filter((key) => validInputProps.includes(key))
     .reduce(
       (obj, key) => {
         obj[key] = props[key];
+
         return obj;
       },
       {} as Record<string, any>,

@@ -24,10 +24,10 @@ export type Client = $Result.DefaultSelection<Prisma.$ClientPayload>
  */
 export type Device = $Result.DefaultSelection<Prisma.$DevicePayload>
 /**
- * Model Event
+ * Model Maintenace
  * 
  */
-export type Event = $Result.DefaultSelection<Prisma.$EventPayload>
+export type Maintenace = $Result.DefaultSelection<Prisma.$MaintenacePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -172,14 +172,14 @@ export class PrismaClient<
   get device(): Prisma.DeviceDelegate<ExtArgs>;
 
   /**
-   * `prisma.event`: Exposes CRUD operations for the **Event** model.
+   * `prisma.maintenace`: Exposes CRUD operations for the **Maintenace** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Events
-    * const events = await prisma.event.findMany()
+    * // Fetch zero or more Maintenaces
+    * const maintenaces = await prisma.maintenace.findMany()
     * ```
     */
-  get event(): Prisma.EventDelegate<ExtArgs>;
+  get maintenace(): Prisma.MaintenaceDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -659,7 +659,7 @@ export namespace Prisma {
   export const ModelName: {
     Client: 'Client',
     Device: 'Device',
-    Event: 'Event'
+    Maintenace: 'Maintenace'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -675,7 +675,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "client" | "device" | "event"
+      modelProps: "client" | "device" | "maintenace"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -819,73 +819,73 @@ export namespace Prisma {
           }
         }
       }
-      Event: {
-        payload: Prisma.$EventPayload<ExtArgs>
-        fields: Prisma.EventFieldRefs
+      Maintenace: {
+        payload: Prisma.$MaintenacePayload<ExtArgs>
+        fields: Prisma.MaintenaceFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.EventFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload> | null
+            args: Prisma.MaintenaceFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.EventFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>
+            args: Prisma.MaintenaceFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>
           }
           findFirst: {
-            args: Prisma.EventFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload> | null
+            args: Prisma.MaintenaceFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.EventFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>
+            args: Prisma.MaintenaceFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>
           }
           findMany: {
-            args: Prisma.EventFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>[]
+            args: Prisma.MaintenaceFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>[]
           }
           create: {
-            args: Prisma.EventCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>
+            args: Prisma.MaintenaceCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>
           }
           createMany: {
-            args: Prisma.EventCreateManyArgs<ExtArgs>
+            args: Prisma.MaintenaceCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.EventCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>[]
+            args: Prisma.MaintenaceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>[]
           }
           delete: {
-            args: Prisma.EventDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>
+            args: Prisma.MaintenaceDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>
           }
           update: {
-            args: Prisma.EventUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>
+            args: Prisma.MaintenaceUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>
           }
           deleteMany: {
-            args: Prisma.EventDeleteManyArgs<ExtArgs>
+            args: Prisma.MaintenaceDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.EventUpdateManyArgs<ExtArgs>
+            args: Prisma.MaintenaceUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.EventUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$EventPayload>
+            args: Prisma.MaintenaceUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MaintenacePayload>
           }
           aggregate: {
-            args: Prisma.EventAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateEvent>
+            args: Prisma.MaintenaceAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMaintenace>
           }
           groupBy: {
-            args: Prisma.EventGroupByArgs<ExtArgs>
-            result: $Utils.Optional<EventGroupByOutputType>[]
+            args: Prisma.MaintenaceGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MaintenaceGroupByOutputType>[]
           }
           count: {
-            args: Prisma.EventCountArgs<ExtArgs>
-            result: $Utils.Optional<EventCountAggregateOutputType> | number
+            args: Prisma.MaintenaceCountArgs<ExtArgs>
+            result: $Utils.Optional<MaintenaceCountAggregateOutputType> | number
           }
         }
       }
@@ -1081,7 +1081,7 @@ export namespace Prisma {
    * ClientCountOutputType without action
    */
   export type ClientCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
   }
 
 
@@ -1112,7 +1112,7 @@ export namespace Prisma {
    * DeviceCountOutputType without action
    */
   export type DeviceCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
   }
 
 
@@ -1330,7 +1330,7 @@ export namespace Prisma {
     name: "Client"
     objects: {
       devices: Prisma.$DevicePayload<ExtArgs>[]
-      events: Prisma.$EventPayload<ExtArgs>[]
+      events: Prisma.$MaintenacePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       clientId: number
@@ -1701,7 +1701,7 @@ export namespace Prisma {
   export interface Prisma__ClientClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     devices<T extends Client$devicesArgs<ExtArgs> = {}>(args?: Subset<T, Client$devicesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DevicePayload<ExtArgs>, T, "findMany"> | Null>
-    events<T extends Client$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Client$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany"> | Null>
+    events<T extends Client$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Client$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2072,19 +2072,19 @@ export namespace Prisma {
    */
   export type Client$eventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
-    where?: EventWhereInput
-    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
-    cursor?: EventWhereUniqueInput
+    include?: MaintenaceInclude<ExtArgs> | null
+    where?: MaintenaceWhereInput
+    orderBy?: MaintenaceOrderByWithRelationInput | MaintenaceOrderByWithRelationInput[]
+    cursor?: MaintenaceWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
+    distinct?: MaintenaceScalarFieldEnum | MaintenaceScalarFieldEnum[]
   }
 
   /**
@@ -2353,7 +2353,7 @@ export namespace Prisma {
     name: "Device"
     objects: {
       client: Prisma.$ClientPayload<ExtArgs>
-      events: Prisma.$EventPayload<ExtArgs>[]
+      events: Prisma.$MaintenacePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       deviceId: number
@@ -2727,7 +2727,7 @@ export namespace Prisma {
   export interface Prisma__DeviceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     client<T extends ClientDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientDefaultArgs<ExtArgs>>): Prisma__ClientClient<$Result.GetResult<Prisma.$ClientPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
-    events<T extends Device$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Device$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany"> | Null>
+    events<T extends Device$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Device$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3085,19 +3085,19 @@ export namespace Prisma {
    */
   export type Device$eventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
-    where?: EventWhereInput
-    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
-    cursor?: EventWhereUniqueInput
+    include?: MaintenaceInclude<ExtArgs> | null
+    where?: MaintenaceWhereInput
+    orderBy?: MaintenaceOrderByWithRelationInput | MaintenaceOrderByWithRelationInput[]
+    cursor?: MaintenaceWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
+    distinct?: MaintenaceScalarFieldEnum | MaintenaceScalarFieldEnum[]
   }
 
   /**
@@ -3116,42 +3116,32 @@ export namespace Prisma {
 
 
   /**
-   * Model Event
+   * Model Maintenace
    */
 
-  export type AggregateEvent = {
-    _count: EventCountAggregateOutputType | null
-    _avg: EventAvgAggregateOutputType | null
-    _sum: EventSumAggregateOutputType | null
-    _min: EventMinAggregateOutputType | null
-    _max: EventMaxAggregateOutputType | null
+  export type AggregateMaintenace = {
+    _count: MaintenaceCountAggregateOutputType | null
+    _avg: MaintenaceAvgAggregateOutputType | null
+    _sum: MaintenaceSumAggregateOutputType | null
+    _min: MaintenaceMinAggregateOutputType | null
+    _max: MaintenaceMaxAggregateOutputType | null
   }
 
-  export type EventAvgAggregateOutputType = {
+  export type MaintenaceAvgAggregateOutputType = {
     id: number | null
     deviceId: number | null
     clientId: number | null
     batteryLevel: number | null
   }
 
-  export type EventSumAggregateOutputType = {
+  export type MaintenaceSumAggregateOutputType = {
     id: number | null
     deviceId: number | null
     clientId: number | null
     batteryLevel: number | null
   }
 
-  export type EventMinAggregateOutputType = {
-    id: number | null
-    deviceId: number | null
-    clientId: number | null
-    scheduledDate: Date | null
-    performedDate: Date | null
-    batteryLevel: number | null
-    ElectrodesDate: Date | null
-  }
-
-  export type EventMaxAggregateOutputType = {
+  export type MaintenaceMinAggregateOutputType = {
     id: number | null
     deviceId: number | null
     clientId: number | null
@@ -3161,7 +3151,17 @@ export namespace Prisma {
     ElectrodesDate: Date | null
   }
 
-  export type EventCountAggregateOutputType = {
+  export type MaintenaceMaxAggregateOutputType = {
+    id: number | null
+    deviceId: number | null
+    clientId: number | null
+    scheduledDate: Date | null
+    performedDate: Date | null
+    batteryLevel: number | null
+    ElectrodesDate: Date | null
+  }
+
+  export type MaintenaceCountAggregateOutputType = {
     id: number
     deviceId: number
     clientId: number
@@ -3173,31 +3173,21 @@ export namespace Prisma {
   }
 
 
-  export type EventAvgAggregateInputType = {
+  export type MaintenaceAvgAggregateInputType = {
     id?: true
     deviceId?: true
     clientId?: true
     batteryLevel?: true
   }
 
-  export type EventSumAggregateInputType = {
+  export type MaintenaceSumAggregateInputType = {
     id?: true
     deviceId?: true
     clientId?: true
     batteryLevel?: true
   }
 
-  export type EventMinAggregateInputType = {
-    id?: true
-    deviceId?: true
-    clientId?: true
-    scheduledDate?: true
-    performedDate?: true
-    batteryLevel?: true
-    ElectrodesDate?: true
-  }
-
-  export type EventMaxAggregateInputType = {
+  export type MaintenaceMinAggregateInputType = {
     id?: true
     deviceId?: true
     clientId?: true
@@ -3207,7 +3197,17 @@ export namespace Prisma {
     ElectrodesDate?: true
   }
 
-  export type EventCountAggregateInputType = {
+  export type MaintenaceMaxAggregateInputType = {
+    id?: true
+    deviceId?: true
+    clientId?: true
+    scheduledDate?: true
+    performedDate?: true
+    batteryLevel?: true
+    ElectrodesDate?: true
+  }
+
+  export type MaintenaceCountAggregateInputType = {
     id?: true
     deviceId?: true
     clientId?: true
@@ -3218,93 +3218,93 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type EventAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Event to aggregate.
+     * Filter which Maintenace to aggregate.
      */
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Events to fetch.
+     * Determine the order of Maintenaces to fetch.
      */
-    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
+    orderBy?: MaintenaceOrderByWithRelationInput | MaintenaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: EventWhereUniqueInput
+    cursor?: MaintenaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Events from the position of the cursor.
+     * Take `±n` Maintenaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Events.
+     * Skip the first `n` Maintenaces.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Events
+     * Count returned Maintenaces
     **/
-    _count?: true | EventCountAggregateInputType
+    _count?: true | MaintenaceCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: EventAvgAggregateInputType
+    _avg?: MaintenaceAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: EventSumAggregateInputType
+    _sum?: MaintenaceSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: EventMinAggregateInputType
+    _min?: MaintenaceMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: EventMaxAggregateInputType
+    _max?: MaintenaceMaxAggregateInputType
   }
 
-  export type GetEventAggregateType<T extends EventAggregateArgs> = {
-        [P in keyof T & keyof AggregateEvent]: P extends '_count' | 'count'
+  export type GetMaintenaceAggregateType<T extends MaintenaceAggregateArgs> = {
+        [P in keyof T & keyof AggregateMaintenace]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateEvent[P]>
-      : GetScalarType<T[P], AggregateEvent[P]>
+        : GetScalarType<T[P], AggregateMaintenace[P]>
+      : GetScalarType<T[P], AggregateMaintenace[P]>
   }
 
 
 
 
-  export type EventGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EventWhereInput
-    orderBy?: EventOrderByWithAggregationInput | EventOrderByWithAggregationInput[]
-    by: EventScalarFieldEnum[] | EventScalarFieldEnum
-    having?: EventScalarWhereWithAggregatesInput
+  export type MaintenaceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MaintenaceWhereInput
+    orderBy?: MaintenaceOrderByWithAggregationInput | MaintenaceOrderByWithAggregationInput[]
+    by: MaintenaceScalarFieldEnum[] | MaintenaceScalarFieldEnum
+    having?: MaintenaceScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: EventCountAggregateInputType | true
-    _avg?: EventAvgAggregateInputType
-    _sum?: EventSumAggregateInputType
-    _min?: EventMinAggregateInputType
-    _max?: EventMaxAggregateInputType
+    _count?: MaintenaceCountAggregateInputType | true
+    _avg?: MaintenaceAvgAggregateInputType
+    _sum?: MaintenaceSumAggregateInputType
+    _min?: MaintenaceMinAggregateInputType
+    _max?: MaintenaceMaxAggregateInputType
   }
 
-  export type EventGroupByOutputType = {
+  export type MaintenaceGroupByOutputType = {
     id: number
     deviceId: number
     clientId: number
@@ -3312,28 +3312,28 @@ export namespace Prisma {
     performedDate: Date
     batteryLevel: number
     ElectrodesDate: Date
-    _count: EventCountAggregateOutputType | null
-    _avg: EventAvgAggregateOutputType | null
-    _sum: EventSumAggregateOutputType | null
-    _min: EventMinAggregateOutputType | null
-    _max: EventMaxAggregateOutputType | null
+    _count: MaintenaceCountAggregateOutputType | null
+    _avg: MaintenaceAvgAggregateOutputType | null
+    _sum: MaintenaceSumAggregateOutputType | null
+    _min: MaintenaceMinAggregateOutputType | null
+    _max: MaintenaceMaxAggregateOutputType | null
   }
 
-  type GetEventGroupByPayload<T extends EventGroupByArgs> = Prisma.PrismaPromise<
+  type GetMaintenaceGroupByPayload<T extends MaintenaceGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<EventGroupByOutputType, T['by']> &
+      PickEnumerable<MaintenaceGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof EventGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof MaintenaceGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], EventGroupByOutputType[P]>
-            : GetScalarType<T[P], EventGroupByOutputType[P]>
+              : GetScalarType<T[P], MaintenaceGroupByOutputType[P]>
+            : GetScalarType<T[P], MaintenaceGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type EventSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenaceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     deviceId?: boolean
     clientId?: boolean
@@ -3341,11 +3341,11 @@ export namespace Prisma {
     performedDate?: boolean
     batteryLevel?: boolean
     ElectrodesDate?: boolean
-    device?: boolean | DeviceDefaultArgs<ExtArgs>
     client?: boolean | ClientDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["event"]>
+    device?: boolean | DeviceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["maintenace"]>
 
-  export type EventSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MaintenaceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     deviceId?: boolean
     clientId?: boolean
@@ -3353,11 +3353,11 @@ export namespace Prisma {
     performedDate?: boolean
     batteryLevel?: boolean
     ElectrodesDate?: boolean
-    device?: boolean | DeviceDefaultArgs<ExtArgs>
     client?: boolean | ClientDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["event"]>
+    device?: boolean | DeviceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["maintenace"]>
 
-  export type EventSelectScalar = {
+  export type MaintenaceSelectScalar = {
     id?: boolean
     deviceId?: boolean
     clientId?: boolean
@@ -3367,20 +3367,20 @@ export namespace Prisma {
     ElectrodesDate?: boolean
   }
 
-  export type EventInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    device?: boolean | DeviceDefaultArgs<ExtArgs>
+  export type MaintenaceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     client?: boolean | ClientDefaultArgs<ExtArgs>
+    device?: boolean | DeviceDefaultArgs<ExtArgs>
   }
-  export type EventIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    device?: boolean | DeviceDefaultArgs<ExtArgs>
+  export type MaintenaceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     client?: boolean | ClientDefaultArgs<ExtArgs>
+    device?: boolean | DeviceDefaultArgs<ExtArgs>
   }
 
-  export type $EventPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Event"
+  export type $MaintenacePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Maintenace"
     objects: {
-      device: Prisma.$DevicePayload<ExtArgs>
       client: Prisma.$ClientPayload<ExtArgs>
+      device: Prisma.$DevicePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3390,136 +3390,136 @@ export namespace Prisma {
       performedDate: Date
       batteryLevel: number
       ElectrodesDate: Date
-    }, ExtArgs["result"]["event"]>
+    }, ExtArgs["result"]["maintenace"]>
     composites: {}
   }
 
-  type EventGetPayload<S extends boolean | null | undefined | EventDefaultArgs> = $Result.GetResult<Prisma.$EventPayload, S>
+  type MaintenaceGetPayload<S extends boolean | null | undefined | MaintenaceDefaultArgs> = $Result.GetResult<Prisma.$MaintenacePayload, S>
 
-  type EventCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<EventFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: EventCountAggregateInputType | true
+  type MaintenaceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<MaintenaceFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: MaintenaceCountAggregateInputType | true
     }
 
-  export interface EventDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Event'], meta: { name: 'Event' } }
+  export interface MaintenaceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Maintenace'], meta: { name: 'Maintenace' } }
     /**
-     * Find zero or one Event that matches the filter.
-     * @param {EventFindUniqueArgs} args - Arguments to find a Event
+     * Find zero or one Maintenace that matches the filter.
+     * @param {MaintenaceFindUniqueArgs} args - Arguments to find a Maintenace
      * @example
-     * // Get one Event
-     * const event = await prisma.event.findUnique({
+     * // Get one Maintenace
+     * const maintenace = await prisma.maintenace.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends EventFindUniqueArgs>(args: SelectSubset<T, EventFindUniqueArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+    findUnique<T extends MaintenaceFindUniqueArgs>(args: SelectSubset<T, MaintenaceFindUniqueArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
 
     /**
-     * Find one Event that matches the filter or throw an error with `error.code='P2025'` 
+     * Find one Maintenace that matches the filter or throw an error with `error.code='P2025'` 
      * if no matches were found.
-     * @param {EventFindUniqueOrThrowArgs} args - Arguments to find a Event
+     * @param {MaintenaceFindUniqueOrThrowArgs} args - Arguments to find a Maintenace
      * @example
-     * // Get one Event
-     * const event = await prisma.event.findUniqueOrThrow({
+     * // Get one Maintenace
+     * const maintenace = await prisma.maintenace.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends EventFindUniqueOrThrowArgs>(args: SelectSubset<T, EventFindUniqueOrThrowArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+    findUniqueOrThrow<T extends MaintenaceFindUniqueOrThrowArgs>(args: SelectSubset<T, MaintenaceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
 
     /**
-     * Find the first Event that matches the filter.
+     * Find the first Maintenace that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EventFindFirstArgs} args - Arguments to find a Event
+     * @param {MaintenaceFindFirstArgs} args - Arguments to find a Maintenace
      * @example
-     * // Get one Event
-     * const event = await prisma.event.findFirst({
+     * // Get one Maintenace
+     * const maintenace = await prisma.maintenace.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends EventFindFirstArgs>(args?: SelectSubset<T, EventFindFirstArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+    findFirst<T extends MaintenaceFindFirstArgs>(args?: SelectSubset<T, MaintenaceFindFirstArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
 
     /**
-     * Find the first Event that matches the filter or
+     * Find the first Maintenace that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EventFindFirstOrThrowArgs} args - Arguments to find a Event
+     * @param {MaintenaceFindFirstOrThrowArgs} args - Arguments to find a Maintenace
      * @example
-     * // Get one Event
-     * const event = await prisma.event.findFirstOrThrow({
+     * // Get one Maintenace
+     * const maintenace = await prisma.maintenace.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends EventFindFirstOrThrowArgs>(args?: SelectSubset<T, EventFindFirstOrThrowArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+    findFirstOrThrow<T extends MaintenaceFindFirstOrThrowArgs>(args?: SelectSubset<T, MaintenaceFindFirstOrThrowArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
 
     /**
-     * Find zero or more Events that matches the filter.
+     * Find zero or more Maintenaces that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EventFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {MaintenaceFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Events
-     * const events = await prisma.event.findMany()
+     * // Get all Maintenaces
+     * const maintenaces = await prisma.maintenace.findMany()
      * 
-     * // Get first 10 Events
-     * const events = await prisma.event.findMany({ take: 10 })
+     * // Get first 10 Maintenaces
+     * const maintenaces = await prisma.maintenace.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const eventWithIdOnly = await prisma.event.findMany({ select: { id: true } })
+     * const maintenaceWithIdOnly = await prisma.maintenace.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends EventFindManyArgs>(args?: SelectSubset<T, EventFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany">>
+    findMany<T extends MaintenaceFindManyArgs>(args?: SelectSubset<T, MaintenaceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "findMany">>
 
     /**
-     * Create a Event.
-     * @param {EventCreateArgs} args - Arguments to create a Event.
+     * Create a Maintenace.
+     * @param {MaintenaceCreateArgs} args - Arguments to create a Maintenace.
      * @example
-     * // Create one Event
-     * const Event = await prisma.event.create({
+     * // Create one Maintenace
+     * const Maintenace = await prisma.maintenace.create({
      *   data: {
-     *     // ... data to create a Event
+     *     // ... data to create a Maintenace
      *   }
      * })
      * 
      */
-    create<T extends EventCreateArgs>(args: SelectSubset<T, EventCreateArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "create">, never, ExtArgs>
+    create<T extends MaintenaceCreateArgs>(args: SelectSubset<T, MaintenaceCreateArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "create">, never, ExtArgs>
 
     /**
-     * Create many Events.
-     * @param {EventCreateManyArgs} args - Arguments to create many Events.
+     * Create many Maintenaces.
+     * @param {MaintenaceCreateManyArgs} args - Arguments to create many Maintenaces.
      * @example
-     * // Create many Events
-     * const event = await prisma.event.createMany({
+     * // Create many Maintenaces
+     * const maintenace = await prisma.maintenace.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends EventCreateManyArgs>(args?: SelectSubset<T, EventCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends MaintenaceCreateManyArgs>(args?: SelectSubset<T, MaintenaceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Events and returns the data saved in the database.
-     * @param {EventCreateManyAndReturnArgs} args - Arguments to create many Events.
+     * Create many Maintenaces and returns the data saved in the database.
+     * @param {MaintenaceCreateManyAndReturnArgs} args - Arguments to create many Maintenaces.
      * @example
-     * // Create many Events
-     * const event = await prisma.event.createManyAndReturn({
+     * // Create many Maintenaces
+     * const maintenace = await prisma.maintenace.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Events and only return the `id`
-     * const eventWithIdOnly = await prisma.event.createManyAndReturn({ 
+     * // Create many Maintenaces and only return the `id`
+     * const maintenaceWithIdOnly = await prisma.maintenace.createManyAndReturn({ 
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3529,28 +3529,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends EventCreateManyAndReturnArgs>(args?: SelectSubset<T, EventCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "createManyAndReturn">>
+    createManyAndReturn<T extends MaintenaceCreateManyAndReturnArgs>(args?: SelectSubset<T, MaintenaceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "createManyAndReturn">>
 
     /**
-     * Delete a Event.
-     * @param {EventDeleteArgs} args - Arguments to delete one Event.
+     * Delete a Maintenace.
+     * @param {MaintenaceDeleteArgs} args - Arguments to delete one Maintenace.
      * @example
-     * // Delete one Event
-     * const Event = await prisma.event.delete({
+     * // Delete one Maintenace
+     * const Maintenace = await prisma.maintenace.delete({
      *   where: {
-     *     // ... filter to delete one Event
+     *     // ... filter to delete one Maintenace
      *   }
      * })
      * 
      */
-    delete<T extends EventDeleteArgs>(args: SelectSubset<T, EventDeleteArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+    delete<T extends MaintenaceDeleteArgs>(args: SelectSubset<T, MaintenaceDeleteArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "delete">, never, ExtArgs>
 
     /**
-     * Update one Event.
-     * @param {EventUpdateArgs} args - Arguments to update one Event.
+     * Update one Maintenace.
+     * @param {MaintenaceUpdateArgs} args - Arguments to update one Maintenace.
      * @example
-     * // Update one Event
-     * const event = await prisma.event.update({
+     * // Update one Maintenace
+     * const maintenace = await prisma.maintenace.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3560,30 +3560,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends EventUpdateArgs>(args: SelectSubset<T, EventUpdateArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "update">, never, ExtArgs>
+    update<T extends MaintenaceUpdateArgs>(args: SelectSubset<T, MaintenaceUpdateArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "update">, never, ExtArgs>
 
     /**
-     * Delete zero or more Events.
-     * @param {EventDeleteManyArgs} args - Arguments to filter Events to delete.
+     * Delete zero or more Maintenaces.
+     * @param {MaintenaceDeleteManyArgs} args - Arguments to filter Maintenaces to delete.
      * @example
-     * // Delete a few Events
-     * const { count } = await prisma.event.deleteMany({
+     * // Delete a few Maintenaces
+     * const { count } = await prisma.maintenace.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends EventDeleteManyArgs>(args?: SelectSubset<T, EventDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends MaintenaceDeleteManyArgs>(args?: SelectSubset<T, MaintenaceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Events.
+     * Update zero or more Maintenaces.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EventUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {MaintenaceUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Events
-     * const event = await prisma.event.updateMany({
+     * // Update many Maintenaces
+     * const maintenace = await prisma.maintenace.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3593,56 +3593,56 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends EventUpdateManyArgs>(args: SelectSubset<T, EventUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends MaintenaceUpdateManyArgs>(args: SelectSubset<T, MaintenaceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Event.
-     * @param {EventUpsertArgs} args - Arguments to update or create a Event.
+     * Create or update one Maintenace.
+     * @param {MaintenaceUpsertArgs} args - Arguments to update or create a Maintenace.
      * @example
-     * // Update or create a Event
-     * const event = await prisma.event.upsert({
+     * // Update or create a Maintenace
+     * const maintenace = await prisma.maintenace.upsert({
      *   create: {
-     *     // ... data to create a Event
+     *     // ... data to create a Maintenace
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Event we want to update
+     *     // ... the filter for the Maintenace we want to update
      *   }
      * })
      */
-    upsert<T extends EventUpsertArgs>(args: SelectSubset<T, EventUpsertArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+    upsert<T extends MaintenaceUpsertArgs>(args: SelectSubset<T, MaintenaceUpsertArgs<ExtArgs>>): Prisma__MaintenaceClient<$Result.GetResult<Prisma.$MaintenacePayload<ExtArgs>, T, "upsert">, never, ExtArgs>
 
 
     /**
-     * Count the number of Events.
+     * Count the number of Maintenaces.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EventCountArgs} args - Arguments to filter Events to count.
+     * @param {MaintenaceCountArgs} args - Arguments to filter Maintenaces to count.
      * @example
-     * // Count the number of Events
-     * const count = await prisma.event.count({
+     * // Count the number of Maintenaces
+     * const count = await prisma.maintenace.count({
      *   where: {
-     *     // ... the filter for the Events we want to count
+     *     // ... the filter for the Maintenaces we want to count
      *   }
      * })
     **/
-    count<T extends EventCountArgs>(
-      args?: Subset<T, EventCountArgs>,
+    count<T extends MaintenaceCountArgs>(
+      args?: Subset<T, MaintenaceCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], EventCountAggregateOutputType>
+          : GetScalarType<T['select'], MaintenaceCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Event.
+     * Allows you to perform aggregations operations on a Maintenace.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EventAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {MaintenaceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3662,13 +3662,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends EventAggregateArgs>(args: Subset<T, EventAggregateArgs>): Prisma.PrismaPromise<GetEventAggregateType<T>>
+    aggregate<T extends MaintenaceAggregateArgs>(args: Subset<T, MaintenaceAggregateArgs>): Prisma.PrismaPromise<GetMaintenaceAggregateType<T>>
 
     /**
-     * Group by Event.
+     * Group by Maintenace.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {EventGroupByArgs} args - Group by arguments.
+     * @param {MaintenaceGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3683,14 +3683,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends EventGroupByArgs,
+      T extends MaintenaceGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: EventGroupByArgs['orderBy'] }
-        : { orderBy?: EventGroupByArgs['orderBy'] },
+        ? { orderBy: MaintenaceGroupByArgs['orderBy'] }
+        : { orderBy?: MaintenaceGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3739,23 +3739,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, EventGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEventGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, MaintenaceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMaintenaceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Event model
+   * Fields of the Maintenace model
    */
-  readonly fields: EventFieldRefs;
+  readonly fields: MaintenaceFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Event.
+   * The delegate class that acts as a "Promise-like" for Maintenace.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__EventClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__MaintenaceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    device<T extends DeviceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DeviceDefaultArgs<ExtArgs>>): Prisma__DeviceClient<$Result.GetResult<Prisma.$DevicePayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     client<T extends ClientDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ClientDefaultArgs<ExtArgs>>): Prisma__ClientClient<$Result.GetResult<Prisma.$ClientPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
+    device<T extends DeviceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DeviceDefaultArgs<ExtArgs>>): Prisma__DeviceClient<$Result.GetResult<Prisma.$DevicePayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3782,345 +3782,345 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Event model
+   * Fields of the Maintenace model
    */ 
-  interface EventFieldRefs {
-    readonly id: FieldRef<"Event", 'Int'>
-    readonly deviceId: FieldRef<"Event", 'Int'>
-    readonly clientId: FieldRef<"Event", 'Int'>
-    readonly scheduledDate: FieldRef<"Event", 'DateTime'>
-    readonly performedDate: FieldRef<"Event", 'DateTime'>
-    readonly batteryLevel: FieldRef<"Event", 'Int'>
-    readonly ElectrodesDate: FieldRef<"Event", 'DateTime'>
+  interface MaintenaceFieldRefs {
+    readonly id: FieldRef<"Maintenace", 'Int'>
+    readonly deviceId: FieldRef<"Maintenace", 'Int'>
+    readonly clientId: FieldRef<"Maintenace", 'Int'>
+    readonly scheduledDate: FieldRef<"Maintenace", 'DateTime'>
+    readonly performedDate: FieldRef<"Maintenace", 'DateTime'>
+    readonly batteryLevel: FieldRef<"Maintenace", 'Int'>
+    readonly ElectrodesDate: FieldRef<"Maintenace", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Event findUnique
+   * Maintenace findUnique
    */
-  export type EventFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * Filter, which Event to fetch.
+     * Filter, which Maintenace to fetch.
      */
-    where: EventWhereUniqueInput
+    where: MaintenaceWhereUniqueInput
   }
 
   /**
-   * Event findUniqueOrThrow
+   * Maintenace findUniqueOrThrow
    */
-  export type EventFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * Filter, which Event to fetch.
+     * Filter, which Maintenace to fetch.
      */
-    where: EventWhereUniqueInput
+    where: MaintenaceWhereUniqueInput
   }
 
   /**
-   * Event findFirst
+   * Maintenace findFirst
    */
-  export type EventFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * Filter, which Event to fetch.
+     * Filter, which Maintenace to fetch.
      */
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Events to fetch.
+     * Determine the order of Maintenaces to fetch.
      */
-    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
+    orderBy?: MaintenaceOrderByWithRelationInput | MaintenaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Events.
+     * Sets the position for searching for Maintenaces.
      */
-    cursor?: EventWhereUniqueInput
+    cursor?: MaintenaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Events from the position of the cursor.
+     * Take `±n` Maintenaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Events.
+     * Skip the first `n` Maintenaces.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Events.
+     * Filter by unique combinations of Maintenaces.
      */
-    distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
+    distinct?: MaintenaceScalarFieldEnum | MaintenaceScalarFieldEnum[]
   }
 
   /**
-   * Event findFirstOrThrow
+   * Maintenace findFirstOrThrow
    */
-  export type EventFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * Filter, which Event to fetch.
+     * Filter, which Maintenace to fetch.
      */
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Events to fetch.
+     * Determine the order of Maintenaces to fetch.
      */
-    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
+    orderBy?: MaintenaceOrderByWithRelationInput | MaintenaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Events.
+     * Sets the position for searching for Maintenaces.
      */
-    cursor?: EventWhereUniqueInput
+    cursor?: MaintenaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Events from the position of the cursor.
+     * Take `±n` Maintenaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Events.
+     * Skip the first `n` Maintenaces.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Events.
+     * Filter by unique combinations of Maintenaces.
      */
-    distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
+    distinct?: MaintenaceScalarFieldEnum | MaintenaceScalarFieldEnum[]
   }
 
   /**
-   * Event findMany
+   * Maintenace findMany
    */
-  export type EventFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * Filter, which Events to fetch.
+     * Filter, which Maintenaces to fetch.
      */
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Events to fetch.
+     * Determine the order of Maintenaces to fetch.
      */
-    orderBy?: EventOrderByWithRelationInput | EventOrderByWithRelationInput[]
+    orderBy?: MaintenaceOrderByWithRelationInput | MaintenaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Events.
+     * Sets the position for listing Maintenaces.
      */
-    cursor?: EventWhereUniqueInput
+    cursor?: MaintenaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Events from the position of the cursor.
+     * Take `±n` Maintenaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Events.
+     * Skip the first `n` Maintenaces.
      */
     skip?: number
-    distinct?: EventScalarFieldEnum | EventScalarFieldEnum[]
+    distinct?: MaintenaceScalarFieldEnum | MaintenaceScalarFieldEnum[]
   }
 
   /**
-   * Event create
+   * Maintenace create
    */
-  export type EventCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * The data needed to create a Event.
+     * The data needed to create a Maintenace.
      */
-    data: XOR<EventCreateInput, EventUncheckedCreateInput>
+    data: XOR<MaintenaceCreateInput, MaintenaceUncheckedCreateInput>
   }
 
   /**
-   * Event createMany
+   * Maintenace createMany
    */
-  export type EventCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Events.
+     * The data used to create many Maintenaces.
      */
-    data: EventCreateManyInput | EventCreateManyInput[]
+    data: MaintenaceCreateManyInput | MaintenaceCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Event createManyAndReturn
+   * Maintenace createManyAndReturn
    */
-  export type EventCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelectCreateManyAndReturn<ExtArgs> | null
+    select?: MaintenaceSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * The data used to create many Events.
+     * The data used to create many Maintenaces.
      */
-    data: EventCreateManyInput | EventCreateManyInput[]
+    data: MaintenaceCreateManyInput | MaintenaceCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: MaintenaceIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Event update
+   * Maintenace update
    */
-  export type EventUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * The data needed to update a Event.
+     * The data needed to update a Maintenace.
      */
-    data: XOR<EventUpdateInput, EventUncheckedUpdateInput>
+    data: XOR<MaintenaceUpdateInput, MaintenaceUncheckedUpdateInput>
     /**
-     * Choose, which Event to update.
+     * Choose, which Maintenace to update.
      */
-    where: EventWhereUniqueInput
+    where: MaintenaceWhereUniqueInput
   }
 
   /**
-   * Event updateMany
+   * Maintenace updateMany
    */
-  export type EventUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Events.
+     * The data used to update Maintenaces.
      */
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyInput>
+    data: XOR<MaintenaceUpdateManyMutationInput, MaintenaceUncheckedUpdateManyInput>
     /**
-     * Filter which Events to update
+     * Filter which Maintenaces to update
      */
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
   }
 
   /**
-   * Event upsert
+   * Maintenace upsert
    */
-  export type EventUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * The filter to search for the Event to update in case it exists.
+     * The filter to search for the Maintenace to update in case it exists.
      */
-    where: EventWhereUniqueInput
+    where: MaintenaceWhereUniqueInput
     /**
-     * In case the Event found by the `where` argument doesn't exist, create a new Event with this data.
+     * In case the Maintenace found by the `where` argument doesn't exist, create a new Maintenace with this data.
      */
-    create: XOR<EventCreateInput, EventUncheckedCreateInput>
+    create: XOR<MaintenaceCreateInput, MaintenaceUncheckedCreateInput>
     /**
-     * In case the Event was found with the provided `where` argument, update it with this data.
+     * In case the Maintenace was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<EventUpdateInput, EventUncheckedUpdateInput>
+    update: XOR<MaintenaceUpdateInput, MaintenaceUncheckedUpdateInput>
   }
 
   /**
-   * Event delete
+   * Maintenace delete
    */
-  export type EventDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
     /**
-     * Filter which Event to delete.
+     * Filter which Maintenace to delete.
      */
-    where: EventWhereUniqueInput
+    where: MaintenaceWhereUniqueInput
   }
 
   /**
-   * Event deleteMany
+   * Maintenace deleteMany
    */
-  export type EventDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Events to delete
+     * Filter which Maintenaces to delete
      */
-    where?: EventWhereInput
+    where?: MaintenaceWhereInput
   }
 
   /**
-   * Event without action
+   * Maintenace without action
    */
-  export type EventDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MaintenaceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Event
+     * Select specific fields to fetch from the Maintenace
      */
-    select?: EventSelect<ExtArgs> | null
+    select?: MaintenaceSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EventInclude<ExtArgs> | null
+    include?: MaintenaceInclude<ExtArgs> | null
   }
 
 
@@ -4159,7 +4159,7 @@ export namespace Prisma {
   export type DeviceScalarFieldEnum = (typeof DeviceScalarFieldEnum)[keyof typeof DeviceScalarFieldEnum]
 
 
-  export const EventScalarFieldEnum: {
+  export const MaintenaceScalarFieldEnum: {
     id: 'id',
     deviceId: 'deviceId',
     clientId: 'clientId',
@@ -4169,7 +4169,7 @@ export namespace Prisma {
     ElectrodesDate: 'ElectrodesDate'
   };
 
-  export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof EventScalarFieldEnum]
+  export type MaintenaceScalarFieldEnum = (typeof MaintenaceScalarFieldEnum)[keyof typeof MaintenaceScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -4260,7 +4260,7 @@ export namespace Prisma {
     name?: StringFilter<"Client"> | string
     email?: StringFilter<"Client"> | string
     devices?: DeviceListRelationFilter
-    events?: EventListRelationFilter
+    events?: MaintenaceListRelationFilter
   }
 
   export type ClientOrderByWithRelationInput = {
@@ -4268,7 +4268,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     devices?: DeviceOrderByRelationAggregateInput
-    events?: EventOrderByRelationAggregateInput
+    events?: MaintenaceOrderByRelationAggregateInput
   }
 
   export type ClientWhereUniqueInput = Prisma.AtLeast<{
@@ -4279,7 +4279,7 @@ export namespace Prisma {
     NOT?: ClientWhereInput | ClientWhereInput[]
     name?: StringFilter<"Client"> | string
     devices?: DeviceListRelationFilter
-    events?: EventListRelationFilter
+    events?: MaintenaceListRelationFilter
   }, "clientId" | "email">
 
   export type ClientOrderByWithAggregationInput = {
@@ -4313,7 +4313,7 @@ export namespace Prisma {
     dlcElectrode?: StringFilter<"Device"> | string
     clientId?: IntFilter<"Device"> | number
     client?: XOR<ClientRelationFilter, ClientWhereInput>
-    events?: EventListRelationFilter
+    events?: MaintenaceListRelationFilter
   }
 
   export type DeviceOrderByWithRelationInput = {
@@ -4324,7 +4324,7 @@ export namespace Prisma {
     dlcElectrode?: SortOrder
     clientId?: SortOrder
     client?: ClientOrderByWithRelationInput
-    events?: EventOrderByRelationAggregateInput
+    events?: MaintenaceOrderByRelationAggregateInput
   }
 
   export type DeviceWhereUniqueInput = Prisma.AtLeast<{
@@ -4338,7 +4338,7 @@ export namespace Prisma {
     dlcElectrode?: StringFilter<"Device"> | string
     clientId?: IntFilter<"Device"> | number
     client?: XOR<ClientRelationFilter, ClientWhereInput>
-    events?: EventListRelationFilter
+    events?: MaintenaceListRelationFilter
   }, "deviceId" | "Sn">
 
   export type DeviceOrderByWithAggregationInput = {
@@ -4367,22 +4367,22 @@ export namespace Prisma {
     clientId?: IntWithAggregatesFilter<"Device"> | number
   }
 
-  export type EventWhereInput = {
-    AND?: EventWhereInput | EventWhereInput[]
-    OR?: EventWhereInput[]
-    NOT?: EventWhereInput | EventWhereInput[]
-    id?: IntFilter<"Event"> | number
-    deviceId?: IntFilter<"Event"> | number
-    clientId?: IntFilter<"Event"> | number
-    scheduledDate?: DateTimeFilter<"Event"> | Date | string
-    performedDate?: DateTimeFilter<"Event"> | Date | string
-    batteryLevel?: IntFilter<"Event"> | number
-    ElectrodesDate?: DateTimeFilter<"Event"> | Date | string
-    device?: XOR<DeviceRelationFilter, DeviceWhereInput>
+  export type MaintenaceWhereInput = {
+    AND?: MaintenaceWhereInput | MaintenaceWhereInput[]
+    OR?: MaintenaceWhereInput[]
+    NOT?: MaintenaceWhereInput | MaintenaceWhereInput[]
+    id?: IntFilter<"Maintenace"> | number
+    deviceId?: IntFilter<"Maintenace"> | number
+    clientId?: IntFilter<"Maintenace"> | number
+    scheduledDate?: DateTimeFilter<"Maintenace"> | Date | string
+    performedDate?: DateTimeFilter<"Maintenace"> | Date | string
+    batteryLevel?: IntFilter<"Maintenace"> | number
+    ElectrodesDate?: DateTimeFilter<"Maintenace"> | Date | string
     client?: XOR<ClientRelationFilter, ClientWhereInput>
+    device?: XOR<DeviceRelationFilter, DeviceWhereInput>
   }
 
-  export type EventOrderByWithRelationInput = {
+  export type MaintenaceOrderByWithRelationInput = {
     id?: SortOrder
     deviceId?: SortOrder
     clientId?: SortOrder
@@ -4390,26 +4390,26 @@ export namespace Prisma {
     performedDate?: SortOrder
     batteryLevel?: SortOrder
     ElectrodesDate?: SortOrder
-    device?: DeviceOrderByWithRelationInput
     client?: ClientOrderByWithRelationInput
+    device?: DeviceOrderByWithRelationInput
   }
 
-  export type EventWhereUniqueInput = Prisma.AtLeast<{
+  export type MaintenaceWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: EventWhereInput | EventWhereInput[]
-    OR?: EventWhereInput[]
-    NOT?: EventWhereInput | EventWhereInput[]
-    deviceId?: IntFilter<"Event"> | number
-    clientId?: IntFilter<"Event"> | number
-    scheduledDate?: DateTimeFilter<"Event"> | Date | string
-    performedDate?: DateTimeFilter<"Event"> | Date | string
-    batteryLevel?: IntFilter<"Event"> | number
-    ElectrodesDate?: DateTimeFilter<"Event"> | Date | string
-    device?: XOR<DeviceRelationFilter, DeviceWhereInput>
+    AND?: MaintenaceWhereInput | MaintenaceWhereInput[]
+    OR?: MaintenaceWhereInput[]
+    NOT?: MaintenaceWhereInput | MaintenaceWhereInput[]
+    deviceId?: IntFilter<"Maintenace"> | number
+    clientId?: IntFilter<"Maintenace"> | number
+    scheduledDate?: DateTimeFilter<"Maintenace"> | Date | string
+    performedDate?: DateTimeFilter<"Maintenace"> | Date | string
+    batteryLevel?: IntFilter<"Maintenace"> | number
+    ElectrodesDate?: DateTimeFilter<"Maintenace"> | Date | string
     client?: XOR<ClientRelationFilter, ClientWhereInput>
+    device?: XOR<DeviceRelationFilter, DeviceWhereInput>
   }, "id">
 
-  export type EventOrderByWithAggregationInput = {
+  export type MaintenaceOrderByWithAggregationInput = {
     id?: SortOrder
     deviceId?: SortOrder
     clientId?: SortOrder
@@ -4417,31 +4417,31 @@ export namespace Prisma {
     performedDate?: SortOrder
     batteryLevel?: SortOrder
     ElectrodesDate?: SortOrder
-    _count?: EventCountOrderByAggregateInput
-    _avg?: EventAvgOrderByAggregateInput
-    _max?: EventMaxOrderByAggregateInput
-    _min?: EventMinOrderByAggregateInput
-    _sum?: EventSumOrderByAggregateInput
+    _count?: MaintenaceCountOrderByAggregateInput
+    _avg?: MaintenaceAvgOrderByAggregateInput
+    _max?: MaintenaceMaxOrderByAggregateInput
+    _min?: MaintenaceMinOrderByAggregateInput
+    _sum?: MaintenaceSumOrderByAggregateInput
   }
 
-  export type EventScalarWhereWithAggregatesInput = {
-    AND?: EventScalarWhereWithAggregatesInput | EventScalarWhereWithAggregatesInput[]
-    OR?: EventScalarWhereWithAggregatesInput[]
-    NOT?: EventScalarWhereWithAggregatesInput | EventScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Event"> | number
-    deviceId?: IntWithAggregatesFilter<"Event"> | number
-    clientId?: IntWithAggregatesFilter<"Event"> | number
-    scheduledDate?: DateTimeWithAggregatesFilter<"Event"> | Date | string
-    performedDate?: DateTimeWithAggregatesFilter<"Event"> | Date | string
-    batteryLevel?: IntWithAggregatesFilter<"Event"> | number
-    ElectrodesDate?: DateTimeWithAggregatesFilter<"Event"> | Date | string
+  export type MaintenaceScalarWhereWithAggregatesInput = {
+    AND?: MaintenaceScalarWhereWithAggregatesInput | MaintenaceScalarWhereWithAggregatesInput[]
+    OR?: MaintenaceScalarWhereWithAggregatesInput[]
+    NOT?: MaintenaceScalarWhereWithAggregatesInput | MaintenaceScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Maintenace"> | number
+    deviceId?: IntWithAggregatesFilter<"Maintenace"> | number
+    clientId?: IntWithAggregatesFilter<"Maintenace"> | number
+    scheduledDate?: DateTimeWithAggregatesFilter<"Maintenace"> | Date | string
+    performedDate?: DateTimeWithAggregatesFilter<"Maintenace"> | Date | string
+    batteryLevel?: IntWithAggregatesFilter<"Maintenace"> | number
+    ElectrodesDate?: DateTimeWithAggregatesFilter<"Maintenace"> | Date | string
   }
 
   export type ClientCreateInput = {
     name: string
     email: string
     devices?: DeviceCreateNestedManyWithoutClientInput
-    events?: EventCreateNestedManyWithoutClientInput
+    events?: MaintenaceCreateNestedManyWithoutClientInput
   }
 
   export type ClientUncheckedCreateInput = {
@@ -4449,14 +4449,14 @@ export namespace Prisma {
     name: string
     email: string
     devices?: DeviceUncheckedCreateNestedManyWithoutClientInput
-    events?: EventUncheckedCreateNestedManyWithoutClientInput
+    events?: MaintenaceUncheckedCreateNestedManyWithoutClientInput
   }
 
   export type ClientUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     devices?: DeviceUpdateManyWithoutClientNestedInput
-    events?: EventUpdateManyWithoutClientNestedInput
+    events?: MaintenaceUpdateManyWithoutClientNestedInput
   }
 
   export type ClientUncheckedUpdateInput = {
@@ -4464,7 +4464,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     devices?: DeviceUncheckedUpdateManyWithoutClientNestedInput
-    events?: EventUncheckedUpdateManyWithoutClientNestedInput
+    events?: MaintenaceUncheckedUpdateManyWithoutClientNestedInput
   }
 
   export type ClientCreateManyInput = {
@@ -4490,7 +4490,7 @@ export namespace Prisma {
     batteryLevel: number
     dlcElectrode: string
     client: ClientCreateNestedOneWithoutDevicesInput
-    events?: EventCreateNestedManyWithoutDeviceInput
+    events?: MaintenaceCreateNestedManyWithoutDeviceInput
   }
 
   export type DeviceUncheckedCreateInput = {
@@ -4500,7 +4500,7 @@ export namespace Prisma {
     batteryLevel: number
     dlcElectrode: string
     clientId: number
-    events?: EventUncheckedCreateNestedManyWithoutDeviceInput
+    events?: MaintenaceUncheckedCreateNestedManyWithoutDeviceInput
   }
 
   export type DeviceUpdateInput = {
@@ -4509,7 +4509,7 @@ export namespace Prisma {
     batteryLevel?: IntFieldUpdateOperationsInput | number
     dlcElectrode?: StringFieldUpdateOperationsInput | string
     client?: ClientUpdateOneRequiredWithoutDevicesNestedInput
-    events?: EventUpdateManyWithoutDeviceNestedInput
+    events?: MaintenaceUpdateManyWithoutDeviceNestedInput
   }
 
   export type DeviceUncheckedUpdateInput = {
@@ -4519,7 +4519,7 @@ export namespace Prisma {
     batteryLevel?: IntFieldUpdateOperationsInput | number
     dlcElectrode?: StringFieldUpdateOperationsInput | string
     clientId?: IntFieldUpdateOperationsInput | number
-    events?: EventUncheckedUpdateManyWithoutDeviceNestedInput
+    events?: MaintenaceUncheckedUpdateManyWithoutDeviceNestedInput
   }
 
   export type DeviceCreateManyInput = {
@@ -4547,16 +4547,16 @@ export namespace Prisma {
     clientId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type EventCreateInput = {
+  export type MaintenaceCreateInput = {
     scheduledDate: Date | string
     performedDate: Date | string
     batteryLevel: number
     ElectrodesDate: Date | string
-    device: DeviceCreateNestedOneWithoutEventsInput
     client: ClientCreateNestedOneWithoutEventsInput
+    device: DeviceCreateNestedOneWithoutEventsInput
   }
 
-  export type EventUncheckedCreateInput = {
+  export type MaintenaceUncheckedCreateInput = {
     id?: number
     deviceId: number
     clientId: number
@@ -4566,16 +4566,16 @@ export namespace Prisma {
     ElectrodesDate: Date | string
   }
 
-  export type EventUpdateInput = {
+  export type MaintenaceUpdateInput = {
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
     performedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     batteryLevel?: IntFieldUpdateOperationsInput | number
     ElectrodesDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    device?: DeviceUpdateOneRequiredWithoutEventsNestedInput
     client?: ClientUpdateOneRequiredWithoutEventsNestedInput
+    device?: DeviceUpdateOneRequiredWithoutEventsNestedInput
   }
 
-  export type EventUncheckedUpdateInput = {
+  export type MaintenaceUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     deviceId?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
@@ -4585,7 +4585,7 @@ export namespace Prisma {
     ElectrodesDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type EventCreateManyInput = {
+  export type MaintenaceCreateManyInput = {
     id?: number
     deviceId: number
     clientId: number
@@ -4595,14 +4595,14 @@ export namespace Prisma {
     ElectrodesDate: Date | string
   }
 
-  export type EventUpdateManyMutationInput = {
+  export type MaintenaceUpdateManyMutationInput = {
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
     performedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     batteryLevel?: IntFieldUpdateOperationsInput | number
     ElectrodesDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type EventUncheckedUpdateManyInput = {
+  export type MaintenaceUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     deviceId?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
@@ -4644,17 +4644,17 @@ export namespace Prisma {
     none?: DeviceWhereInput
   }
 
-  export type EventListRelationFilter = {
-    every?: EventWhereInput
-    some?: EventWhereInput
-    none?: EventWhereInput
+  export type MaintenaceListRelationFilter = {
+    every?: MaintenaceWhereInput
+    some?: MaintenaceWhereInput
+    none?: MaintenaceWhereInput
   }
 
   export type DeviceOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type EventOrderByRelationAggregateInput = {
+  export type MaintenaceOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -4778,7 +4778,7 @@ export namespace Prisma {
     isNot?: DeviceWhereInput
   }
 
-  export type EventCountOrderByAggregateInput = {
+  export type MaintenaceCountOrderByAggregateInput = {
     id?: SortOrder
     deviceId?: SortOrder
     clientId?: SortOrder
@@ -4788,24 +4788,14 @@ export namespace Prisma {
     ElectrodesDate?: SortOrder
   }
 
-  export type EventAvgOrderByAggregateInput = {
+  export type MaintenaceAvgOrderByAggregateInput = {
     id?: SortOrder
     deviceId?: SortOrder
     clientId?: SortOrder
     batteryLevel?: SortOrder
   }
 
-  export type EventMaxOrderByAggregateInput = {
-    id?: SortOrder
-    deviceId?: SortOrder
-    clientId?: SortOrder
-    scheduledDate?: SortOrder
-    performedDate?: SortOrder
-    batteryLevel?: SortOrder
-    ElectrodesDate?: SortOrder
-  }
-
-  export type EventMinOrderByAggregateInput = {
+  export type MaintenaceMaxOrderByAggregateInput = {
     id?: SortOrder
     deviceId?: SortOrder
     clientId?: SortOrder
@@ -4815,7 +4805,17 @@ export namespace Prisma {
     ElectrodesDate?: SortOrder
   }
 
-  export type EventSumOrderByAggregateInput = {
+  export type MaintenaceMinOrderByAggregateInput = {
+    id?: SortOrder
+    deviceId?: SortOrder
+    clientId?: SortOrder
+    scheduledDate?: SortOrder
+    performedDate?: SortOrder
+    batteryLevel?: SortOrder
+    ElectrodesDate?: SortOrder
+  }
+
+  export type MaintenaceSumOrderByAggregateInput = {
     id?: SortOrder
     deviceId?: SortOrder
     clientId?: SortOrder
@@ -4843,11 +4843,11 @@ export namespace Prisma {
     connect?: DeviceWhereUniqueInput | DeviceWhereUniqueInput[]
   }
 
-  export type EventCreateNestedManyWithoutClientInput = {
-    create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+  export type MaintenaceCreateNestedManyWithoutClientInput = {
+    create?: XOR<MaintenaceCreateWithoutClientInput, MaintenaceUncheckedCreateWithoutClientInput> | MaintenaceCreateWithoutClientInput[] | MaintenaceUncheckedCreateWithoutClientInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutClientInput | MaintenaceCreateOrConnectWithoutClientInput[]
+    createMany?: MaintenaceCreateManyClientInputEnvelope
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
   }
 
   export type DeviceUncheckedCreateNestedManyWithoutClientInput = {
@@ -4857,11 +4857,11 @@ export namespace Prisma {
     connect?: DeviceWhereUniqueInput | DeviceWhereUniqueInput[]
   }
 
-  export type EventUncheckedCreateNestedManyWithoutClientInput = {
-    create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+  export type MaintenaceUncheckedCreateNestedManyWithoutClientInput = {
+    create?: XOR<MaintenaceCreateWithoutClientInput, MaintenaceUncheckedCreateWithoutClientInput> | MaintenaceCreateWithoutClientInput[] | MaintenaceUncheckedCreateWithoutClientInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutClientInput | MaintenaceCreateOrConnectWithoutClientInput[]
+    createMany?: MaintenaceCreateManyClientInputEnvelope
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -4882,18 +4882,18 @@ export namespace Prisma {
     deleteMany?: DeviceScalarWhereInput | DeviceScalarWhereInput[]
   }
 
-  export type EventUpdateManyWithoutClientNestedInput = {
-    create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutClientInput | EventUpsertWithWhereUniqueWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
-    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutClientInput | EventUpdateWithWhereUniqueWithoutClientInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutClientInput | EventUpdateManyWithWhereWithoutClientInput[]
-    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
+  export type MaintenaceUpdateManyWithoutClientNestedInput = {
+    create?: XOR<MaintenaceCreateWithoutClientInput, MaintenaceUncheckedCreateWithoutClientInput> | MaintenaceCreateWithoutClientInput[] | MaintenaceUncheckedCreateWithoutClientInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutClientInput | MaintenaceCreateOrConnectWithoutClientInput[]
+    upsert?: MaintenaceUpsertWithWhereUniqueWithoutClientInput | MaintenaceUpsertWithWhereUniqueWithoutClientInput[]
+    createMany?: MaintenaceCreateManyClientInputEnvelope
+    set?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    disconnect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    delete?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    update?: MaintenaceUpdateWithWhereUniqueWithoutClientInput | MaintenaceUpdateWithWhereUniqueWithoutClientInput[]
+    updateMany?: MaintenaceUpdateManyWithWhereWithoutClientInput | MaintenaceUpdateManyWithWhereWithoutClientInput[]
+    deleteMany?: MaintenaceScalarWhereInput | MaintenaceScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -4918,18 +4918,18 @@ export namespace Prisma {
     deleteMany?: DeviceScalarWhereInput | DeviceScalarWhereInput[]
   }
 
-  export type EventUncheckedUpdateManyWithoutClientNestedInput = {
-    create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutClientInput | EventUpsertWithWhereUniqueWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
-    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutClientInput | EventUpdateWithWhereUniqueWithoutClientInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutClientInput | EventUpdateManyWithWhereWithoutClientInput[]
-    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
+  export type MaintenaceUncheckedUpdateManyWithoutClientNestedInput = {
+    create?: XOR<MaintenaceCreateWithoutClientInput, MaintenaceUncheckedCreateWithoutClientInput> | MaintenaceCreateWithoutClientInput[] | MaintenaceUncheckedCreateWithoutClientInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutClientInput | MaintenaceCreateOrConnectWithoutClientInput[]
+    upsert?: MaintenaceUpsertWithWhereUniqueWithoutClientInput | MaintenaceUpsertWithWhereUniqueWithoutClientInput[]
+    createMany?: MaintenaceCreateManyClientInputEnvelope
+    set?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    disconnect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    delete?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    update?: MaintenaceUpdateWithWhereUniqueWithoutClientInput | MaintenaceUpdateWithWhereUniqueWithoutClientInput[]
+    updateMany?: MaintenaceUpdateManyWithWhereWithoutClientInput | MaintenaceUpdateManyWithWhereWithoutClientInput[]
+    deleteMany?: MaintenaceScalarWhereInput | MaintenaceScalarWhereInput[]
   }
 
   export type ClientCreateNestedOneWithoutDevicesInput = {
@@ -4938,18 +4938,18 @@ export namespace Prisma {
     connect?: ClientWhereUniqueInput
   }
 
-  export type EventCreateNestedManyWithoutDeviceInput = {
-    create?: XOR<EventCreateWithoutDeviceInput, EventUncheckedCreateWithoutDeviceInput> | EventCreateWithoutDeviceInput[] | EventUncheckedCreateWithoutDeviceInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutDeviceInput | EventCreateOrConnectWithoutDeviceInput[]
-    createMany?: EventCreateManyDeviceInputEnvelope
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+  export type MaintenaceCreateNestedManyWithoutDeviceInput = {
+    create?: XOR<MaintenaceCreateWithoutDeviceInput, MaintenaceUncheckedCreateWithoutDeviceInput> | MaintenaceCreateWithoutDeviceInput[] | MaintenaceUncheckedCreateWithoutDeviceInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutDeviceInput | MaintenaceCreateOrConnectWithoutDeviceInput[]
+    createMany?: MaintenaceCreateManyDeviceInputEnvelope
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
   }
 
-  export type EventUncheckedCreateNestedManyWithoutDeviceInput = {
-    create?: XOR<EventCreateWithoutDeviceInput, EventUncheckedCreateWithoutDeviceInput> | EventCreateWithoutDeviceInput[] | EventUncheckedCreateWithoutDeviceInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutDeviceInput | EventCreateOrConnectWithoutDeviceInput[]
-    createMany?: EventCreateManyDeviceInputEnvelope
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
+  export type MaintenaceUncheckedCreateNestedManyWithoutDeviceInput = {
+    create?: XOR<MaintenaceCreateWithoutDeviceInput, MaintenaceUncheckedCreateWithoutDeviceInput> | MaintenaceCreateWithoutDeviceInput[] | MaintenaceUncheckedCreateWithoutDeviceInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutDeviceInput | MaintenaceCreateOrConnectWithoutDeviceInput[]
+    createMany?: MaintenaceCreateManyDeviceInputEnvelope
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
   }
 
   export type ClientUpdateOneRequiredWithoutDevicesNestedInput = {
@@ -4960,38 +4960,32 @@ export namespace Prisma {
     update?: XOR<XOR<ClientUpdateToOneWithWhereWithoutDevicesInput, ClientUpdateWithoutDevicesInput>, ClientUncheckedUpdateWithoutDevicesInput>
   }
 
-  export type EventUpdateManyWithoutDeviceNestedInput = {
-    create?: XOR<EventCreateWithoutDeviceInput, EventUncheckedCreateWithoutDeviceInput> | EventCreateWithoutDeviceInput[] | EventUncheckedCreateWithoutDeviceInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutDeviceInput | EventCreateOrConnectWithoutDeviceInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutDeviceInput | EventUpsertWithWhereUniqueWithoutDeviceInput[]
-    createMany?: EventCreateManyDeviceInputEnvelope
-    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutDeviceInput | EventUpdateWithWhereUniqueWithoutDeviceInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutDeviceInput | EventUpdateManyWithWhereWithoutDeviceInput[]
-    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
+  export type MaintenaceUpdateManyWithoutDeviceNestedInput = {
+    create?: XOR<MaintenaceCreateWithoutDeviceInput, MaintenaceUncheckedCreateWithoutDeviceInput> | MaintenaceCreateWithoutDeviceInput[] | MaintenaceUncheckedCreateWithoutDeviceInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutDeviceInput | MaintenaceCreateOrConnectWithoutDeviceInput[]
+    upsert?: MaintenaceUpsertWithWhereUniqueWithoutDeviceInput | MaintenaceUpsertWithWhereUniqueWithoutDeviceInput[]
+    createMany?: MaintenaceCreateManyDeviceInputEnvelope
+    set?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    disconnect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    delete?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    update?: MaintenaceUpdateWithWhereUniqueWithoutDeviceInput | MaintenaceUpdateWithWhereUniqueWithoutDeviceInput[]
+    updateMany?: MaintenaceUpdateManyWithWhereWithoutDeviceInput | MaintenaceUpdateManyWithWhereWithoutDeviceInput[]
+    deleteMany?: MaintenaceScalarWhereInput | MaintenaceScalarWhereInput[]
   }
 
-  export type EventUncheckedUpdateManyWithoutDeviceNestedInput = {
-    create?: XOR<EventCreateWithoutDeviceInput, EventUncheckedCreateWithoutDeviceInput> | EventCreateWithoutDeviceInput[] | EventUncheckedCreateWithoutDeviceInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutDeviceInput | EventCreateOrConnectWithoutDeviceInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutDeviceInput | EventUpsertWithWhereUniqueWithoutDeviceInput[]
-    createMany?: EventCreateManyDeviceInputEnvelope
-    set?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutDeviceInput | EventUpdateWithWhereUniqueWithoutDeviceInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutDeviceInput | EventUpdateManyWithWhereWithoutDeviceInput[]
-    deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
-  }
-
-  export type DeviceCreateNestedOneWithoutEventsInput = {
-    create?: XOR<DeviceCreateWithoutEventsInput, DeviceUncheckedCreateWithoutEventsInput>
-    connectOrCreate?: DeviceCreateOrConnectWithoutEventsInput
-    connect?: DeviceWhereUniqueInput
+  export type MaintenaceUncheckedUpdateManyWithoutDeviceNestedInput = {
+    create?: XOR<MaintenaceCreateWithoutDeviceInput, MaintenaceUncheckedCreateWithoutDeviceInput> | MaintenaceCreateWithoutDeviceInput[] | MaintenaceUncheckedCreateWithoutDeviceInput[]
+    connectOrCreate?: MaintenaceCreateOrConnectWithoutDeviceInput | MaintenaceCreateOrConnectWithoutDeviceInput[]
+    upsert?: MaintenaceUpsertWithWhereUniqueWithoutDeviceInput | MaintenaceUpsertWithWhereUniqueWithoutDeviceInput[]
+    createMany?: MaintenaceCreateManyDeviceInputEnvelope
+    set?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    disconnect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    delete?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    connect?: MaintenaceWhereUniqueInput | MaintenaceWhereUniqueInput[]
+    update?: MaintenaceUpdateWithWhereUniqueWithoutDeviceInput | MaintenaceUpdateWithWhereUniqueWithoutDeviceInput[]
+    updateMany?: MaintenaceUpdateManyWithWhereWithoutDeviceInput | MaintenaceUpdateManyWithWhereWithoutDeviceInput[]
+    deleteMany?: MaintenaceScalarWhereInput | MaintenaceScalarWhereInput[]
   }
 
   export type ClientCreateNestedOneWithoutEventsInput = {
@@ -5000,16 +4994,14 @@ export namespace Prisma {
     connect?: ClientWhereUniqueInput
   }
 
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
-  }
-
-  export type DeviceUpdateOneRequiredWithoutEventsNestedInput = {
+  export type DeviceCreateNestedOneWithoutEventsInput = {
     create?: XOR<DeviceCreateWithoutEventsInput, DeviceUncheckedCreateWithoutEventsInput>
     connectOrCreate?: DeviceCreateOrConnectWithoutEventsInput
-    upsert?: DeviceUpsertWithoutEventsInput
     connect?: DeviceWhereUniqueInput
-    update?: XOR<XOR<DeviceUpdateToOneWithWhereWithoutEventsInput, DeviceUpdateWithoutEventsInput>, DeviceUncheckedUpdateWithoutEventsInput>
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type ClientUpdateOneRequiredWithoutEventsNestedInput = {
@@ -5018,6 +5010,14 @@ export namespace Prisma {
     upsert?: ClientUpsertWithoutEventsInput
     connect?: ClientWhereUniqueInput
     update?: XOR<XOR<ClientUpdateToOneWithWhereWithoutEventsInput, ClientUpdateWithoutEventsInput>, ClientUncheckedUpdateWithoutEventsInput>
+  }
+
+  export type DeviceUpdateOneRequiredWithoutEventsNestedInput = {
+    create?: XOR<DeviceCreateWithoutEventsInput, DeviceUncheckedCreateWithoutEventsInput>
+    connectOrCreate?: DeviceCreateOrConnectWithoutEventsInput
+    upsert?: DeviceUpsertWithoutEventsInput
+    connect?: DeviceWhereUniqueInput
+    update?: XOR<XOR<DeviceUpdateToOneWithWhereWithoutEventsInput, DeviceUpdateWithoutEventsInput>, DeviceUncheckedUpdateWithoutEventsInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -5119,7 +5119,7 @@ export namespace Prisma {
     type: string
     batteryLevel: number
     dlcElectrode: string
-    events?: EventCreateNestedManyWithoutDeviceInput
+    events?: MaintenaceCreateNestedManyWithoutDeviceInput
   }
 
   export type DeviceUncheckedCreateWithoutClientInput = {
@@ -5128,7 +5128,7 @@ export namespace Prisma {
     type: string
     batteryLevel: number
     dlcElectrode: string
-    events?: EventUncheckedCreateNestedManyWithoutDeviceInput
+    events?: MaintenaceUncheckedCreateNestedManyWithoutDeviceInput
   }
 
   export type DeviceCreateOrConnectWithoutClientInput = {
@@ -5141,7 +5141,7 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type EventCreateWithoutClientInput = {
+  export type MaintenaceCreateWithoutClientInput = {
     scheduledDate: Date | string
     performedDate: Date | string
     batteryLevel: number
@@ -5149,7 +5149,7 @@ export namespace Prisma {
     device: DeviceCreateNestedOneWithoutEventsInput
   }
 
-  export type EventUncheckedCreateWithoutClientInput = {
+  export type MaintenaceUncheckedCreateWithoutClientInput = {
     id?: number
     deviceId: number
     scheduledDate: Date | string
@@ -5158,13 +5158,13 @@ export namespace Prisma {
     ElectrodesDate: Date | string
   }
 
-  export type EventCreateOrConnectWithoutClientInput = {
-    where: EventWhereUniqueInput
-    create: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput>
+  export type MaintenaceCreateOrConnectWithoutClientInput = {
+    where: MaintenaceWhereUniqueInput
+    create: XOR<MaintenaceCreateWithoutClientInput, MaintenaceUncheckedCreateWithoutClientInput>
   }
 
-  export type EventCreateManyClientInputEnvelope = {
-    data: EventCreateManyClientInput | EventCreateManyClientInput[]
+  export type MaintenaceCreateManyClientInputEnvelope = {
+    data: MaintenaceCreateManyClientInput | MaintenaceCreateManyClientInput[]
     skipDuplicates?: boolean
   }
 
@@ -5196,46 +5196,46 @@ export namespace Prisma {
     clientId?: IntFilter<"Device"> | number
   }
 
-  export type EventUpsertWithWhereUniqueWithoutClientInput = {
-    where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutClientInput, EventUncheckedUpdateWithoutClientInput>
-    create: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput>
+  export type MaintenaceUpsertWithWhereUniqueWithoutClientInput = {
+    where: MaintenaceWhereUniqueInput
+    update: XOR<MaintenaceUpdateWithoutClientInput, MaintenaceUncheckedUpdateWithoutClientInput>
+    create: XOR<MaintenaceCreateWithoutClientInput, MaintenaceUncheckedCreateWithoutClientInput>
   }
 
-  export type EventUpdateWithWhereUniqueWithoutClientInput = {
-    where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutClientInput, EventUncheckedUpdateWithoutClientInput>
+  export type MaintenaceUpdateWithWhereUniqueWithoutClientInput = {
+    where: MaintenaceWhereUniqueInput
+    data: XOR<MaintenaceUpdateWithoutClientInput, MaintenaceUncheckedUpdateWithoutClientInput>
   }
 
-  export type EventUpdateManyWithWhereWithoutClientInput = {
-    where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutClientInput>
+  export type MaintenaceUpdateManyWithWhereWithoutClientInput = {
+    where: MaintenaceScalarWhereInput
+    data: XOR<MaintenaceUpdateManyMutationInput, MaintenaceUncheckedUpdateManyWithoutClientInput>
   }
 
-  export type EventScalarWhereInput = {
-    AND?: EventScalarWhereInput | EventScalarWhereInput[]
-    OR?: EventScalarWhereInput[]
-    NOT?: EventScalarWhereInput | EventScalarWhereInput[]
-    id?: IntFilter<"Event"> | number
-    deviceId?: IntFilter<"Event"> | number
-    clientId?: IntFilter<"Event"> | number
-    scheduledDate?: DateTimeFilter<"Event"> | Date | string
-    performedDate?: DateTimeFilter<"Event"> | Date | string
-    batteryLevel?: IntFilter<"Event"> | number
-    ElectrodesDate?: DateTimeFilter<"Event"> | Date | string
+  export type MaintenaceScalarWhereInput = {
+    AND?: MaintenaceScalarWhereInput | MaintenaceScalarWhereInput[]
+    OR?: MaintenaceScalarWhereInput[]
+    NOT?: MaintenaceScalarWhereInput | MaintenaceScalarWhereInput[]
+    id?: IntFilter<"Maintenace"> | number
+    deviceId?: IntFilter<"Maintenace"> | number
+    clientId?: IntFilter<"Maintenace"> | number
+    scheduledDate?: DateTimeFilter<"Maintenace"> | Date | string
+    performedDate?: DateTimeFilter<"Maintenace"> | Date | string
+    batteryLevel?: IntFilter<"Maintenace"> | number
+    ElectrodesDate?: DateTimeFilter<"Maintenace"> | Date | string
   }
 
   export type ClientCreateWithoutDevicesInput = {
     name: string
     email: string
-    events?: EventCreateNestedManyWithoutClientInput
+    events?: MaintenaceCreateNestedManyWithoutClientInput
   }
 
   export type ClientUncheckedCreateWithoutDevicesInput = {
     clientId?: number
     name: string
     email: string
-    events?: EventUncheckedCreateNestedManyWithoutClientInput
+    events?: MaintenaceUncheckedCreateNestedManyWithoutClientInput
   }
 
   export type ClientCreateOrConnectWithoutDevicesInput = {
@@ -5243,7 +5243,7 @@ export namespace Prisma {
     create: XOR<ClientCreateWithoutDevicesInput, ClientUncheckedCreateWithoutDevicesInput>
   }
 
-  export type EventCreateWithoutDeviceInput = {
+  export type MaintenaceCreateWithoutDeviceInput = {
     scheduledDate: Date | string
     performedDate: Date | string
     batteryLevel: number
@@ -5251,7 +5251,7 @@ export namespace Prisma {
     client: ClientCreateNestedOneWithoutEventsInput
   }
 
-  export type EventUncheckedCreateWithoutDeviceInput = {
+  export type MaintenaceUncheckedCreateWithoutDeviceInput = {
     id?: number
     clientId: number
     scheduledDate: Date | string
@@ -5260,13 +5260,13 @@ export namespace Prisma {
     ElectrodesDate: Date | string
   }
 
-  export type EventCreateOrConnectWithoutDeviceInput = {
-    where: EventWhereUniqueInput
-    create: XOR<EventCreateWithoutDeviceInput, EventUncheckedCreateWithoutDeviceInput>
+  export type MaintenaceCreateOrConnectWithoutDeviceInput = {
+    where: MaintenaceWhereUniqueInput
+    create: XOR<MaintenaceCreateWithoutDeviceInput, MaintenaceUncheckedCreateWithoutDeviceInput>
   }
 
-  export type EventCreateManyDeviceInputEnvelope = {
-    data: EventCreateManyDeviceInput | EventCreateManyDeviceInput[]
+  export type MaintenaceCreateManyDeviceInputEnvelope = {
+    data: MaintenaceCreateManyDeviceInput | MaintenaceCreateManyDeviceInput[]
     skipDuplicates?: boolean
   }
 
@@ -5284,30 +5284,48 @@ export namespace Prisma {
   export type ClientUpdateWithoutDevicesInput = {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    events?: EventUpdateManyWithoutClientNestedInput
+    events?: MaintenaceUpdateManyWithoutClientNestedInput
   }
 
   export type ClientUncheckedUpdateWithoutDevicesInput = {
     clientId?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    events?: EventUncheckedUpdateManyWithoutClientNestedInput
+    events?: MaintenaceUncheckedUpdateManyWithoutClientNestedInput
   }
 
-  export type EventUpsertWithWhereUniqueWithoutDeviceInput = {
-    where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutDeviceInput, EventUncheckedUpdateWithoutDeviceInput>
-    create: XOR<EventCreateWithoutDeviceInput, EventUncheckedCreateWithoutDeviceInput>
+  export type MaintenaceUpsertWithWhereUniqueWithoutDeviceInput = {
+    where: MaintenaceWhereUniqueInput
+    update: XOR<MaintenaceUpdateWithoutDeviceInput, MaintenaceUncheckedUpdateWithoutDeviceInput>
+    create: XOR<MaintenaceCreateWithoutDeviceInput, MaintenaceUncheckedCreateWithoutDeviceInput>
   }
 
-  export type EventUpdateWithWhereUniqueWithoutDeviceInput = {
-    where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutDeviceInput, EventUncheckedUpdateWithoutDeviceInput>
+  export type MaintenaceUpdateWithWhereUniqueWithoutDeviceInput = {
+    where: MaintenaceWhereUniqueInput
+    data: XOR<MaintenaceUpdateWithoutDeviceInput, MaintenaceUncheckedUpdateWithoutDeviceInput>
   }
 
-  export type EventUpdateManyWithWhereWithoutDeviceInput = {
-    where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutDeviceInput>
+  export type MaintenaceUpdateManyWithWhereWithoutDeviceInput = {
+    where: MaintenaceScalarWhereInput
+    data: XOR<MaintenaceUpdateManyMutationInput, MaintenaceUncheckedUpdateManyWithoutDeviceInput>
+  }
+
+  export type ClientCreateWithoutEventsInput = {
+    name: string
+    email: string
+    devices?: DeviceCreateNestedManyWithoutClientInput
+  }
+
+  export type ClientUncheckedCreateWithoutEventsInput = {
+    clientId?: number
+    name: string
+    email: string
+    devices?: DeviceUncheckedCreateNestedManyWithoutClientInput
+  }
+
+  export type ClientCreateOrConnectWithoutEventsInput = {
+    where: ClientWhereUniqueInput
+    create: XOR<ClientCreateWithoutEventsInput, ClientUncheckedCreateWithoutEventsInput>
   }
 
   export type DeviceCreateWithoutEventsInput = {
@@ -5332,22 +5350,28 @@ export namespace Prisma {
     create: XOR<DeviceCreateWithoutEventsInput, DeviceUncheckedCreateWithoutEventsInput>
   }
 
-  export type ClientCreateWithoutEventsInput = {
-    name: string
-    email: string
-    devices?: DeviceCreateNestedManyWithoutClientInput
-  }
-
-  export type ClientUncheckedCreateWithoutEventsInput = {
-    clientId?: number
-    name: string
-    email: string
-    devices?: DeviceUncheckedCreateNestedManyWithoutClientInput
-  }
-
-  export type ClientCreateOrConnectWithoutEventsInput = {
-    where: ClientWhereUniqueInput
+  export type ClientUpsertWithoutEventsInput = {
+    update: XOR<ClientUpdateWithoutEventsInput, ClientUncheckedUpdateWithoutEventsInput>
     create: XOR<ClientCreateWithoutEventsInput, ClientUncheckedCreateWithoutEventsInput>
+    where?: ClientWhereInput
+  }
+
+  export type ClientUpdateToOneWithWhereWithoutEventsInput = {
+    where?: ClientWhereInput
+    data: XOR<ClientUpdateWithoutEventsInput, ClientUncheckedUpdateWithoutEventsInput>
+  }
+
+  export type ClientUpdateWithoutEventsInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    devices?: DeviceUpdateManyWithoutClientNestedInput
+  }
+
+  export type ClientUncheckedUpdateWithoutEventsInput = {
+    clientId?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    devices?: DeviceUncheckedUpdateManyWithoutClientNestedInput
   }
 
   export type DeviceUpsertWithoutEventsInput = {
@@ -5378,30 +5402,6 @@ export namespace Prisma {
     clientId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ClientUpsertWithoutEventsInput = {
-    update: XOR<ClientUpdateWithoutEventsInput, ClientUncheckedUpdateWithoutEventsInput>
-    create: XOR<ClientCreateWithoutEventsInput, ClientUncheckedCreateWithoutEventsInput>
-    where?: ClientWhereInput
-  }
-
-  export type ClientUpdateToOneWithWhereWithoutEventsInput = {
-    where?: ClientWhereInput
-    data: XOR<ClientUpdateWithoutEventsInput, ClientUncheckedUpdateWithoutEventsInput>
-  }
-
-  export type ClientUpdateWithoutEventsInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    devices?: DeviceUpdateManyWithoutClientNestedInput
-  }
-
-  export type ClientUncheckedUpdateWithoutEventsInput = {
-    clientId?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    devices?: DeviceUncheckedUpdateManyWithoutClientNestedInput
-  }
-
   export type DeviceCreateManyClientInput = {
     deviceId?: number
     Sn: string
@@ -5410,7 +5410,7 @@ export namespace Prisma {
     dlcElectrode: string
   }
 
-  export type EventCreateManyClientInput = {
+  export type MaintenaceCreateManyClientInput = {
     id?: number
     deviceId: number
     scheduledDate: Date | string
@@ -5424,7 +5424,7 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     batteryLevel?: IntFieldUpdateOperationsInput | number
     dlcElectrode?: StringFieldUpdateOperationsInput | string
-    events?: EventUpdateManyWithoutDeviceNestedInput
+    events?: MaintenaceUpdateManyWithoutDeviceNestedInput
   }
 
   export type DeviceUncheckedUpdateWithoutClientInput = {
@@ -5433,7 +5433,7 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     batteryLevel?: IntFieldUpdateOperationsInput | number
     dlcElectrode?: StringFieldUpdateOperationsInput | string
-    events?: EventUncheckedUpdateManyWithoutDeviceNestedInput
+    events?: MaintenaceUncheckedUpdateManyWithoutDeviceNestedInput
   }
 
   export type DeviceUncheckedUpdateManyWithoutClientInput = {
@@ -5444,7 +5444,7 @@ export namespace Prisma {
     dlcElectrode?: StringFieldUpdateOperationsInput | string
   }
 
-  export type EventUpdateWithoutClientInput = {
+  export type MaintenaceUpdateWithoutClientInput = {
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
     performedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     batteryLevel?: IntFieldUpdateOperationsInput | number
@@ -5452,7 +5452,7 @@ export namespace Prisma {
     device?: DeviceUpdateOneRequiredWithoutEventsNestedInput
   }
 
-  export type EventUncheckedUpdateWithoutClientInput = {
+  export type MaintenaceUncheckedUpdateWithoutClientInput = {
     id?: IntFieldUpdateOperationsInput | number
     deviceId?: IntFieldUpdateOperationsInput | number
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5461,7 +5461,7 @@ export namespace Prisma {
     ElectrodesDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type EventUncheckedUpdateManyWithoutClientInput = {
+  export type MaintenaceUncheckedUpdateManyWithoutClientInput = {
     id?: IntFieldUpdateOperationsInput | number
     deviceId?: IntFieldUpdateOperationsInput | number
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5470,7 +5470,7 @@ export namespace Prisma {
     ElectrodesDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type EventCreateManyDeviceInput = {
+  export type MaintenaceCreateManyDeviceInput = {
     id?: number
     clientId: number
     scheduledDate: Date | string
@@ -5479,7 +5479,7 @@ export namespace Prisma {
     ElectrodesDate: Date | string
   }
 
-  export type EventUpdateWithoutDeviceInput = {
+  export type MaintenaceUpdateWithoutDeviceInput = {
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
     performedDate?: DateTimeFieldUpdateOperationsInput | Date | string
     batteryLevel?: IntFieldUpdateOperationsInput | number
@@ -5487,7 +5487,7 @@ export namespace Prisma {
     client?: ClientUpdateOneRequiredWithoutEventsNestedInput
   }
 
-  export type EventUncheckedUpdateWithoutDeviceInput = {
+  export type MaintenaceUncheckedUpdateWithoutDeviceInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5496,7 +5496,7 @@ export namespace Prisma {
     ElectrodesDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type EventUncheckedUpdateManyWithoutDeviceInput = {
+  export type MaintenaceUncheckedUpdateManyWithoutDeviceInput = {
     id?: IntFieldUpdateOperationsInput | number
     clientId?: IntFieldUpdateOperationsInput | number
     scheduledDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5527,9 +5527,9 @@ export namespace Prisma {
      */
     export type DeviceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = DeviceDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use EventDefaultArgs instead
+     * @deprecated Use MaintenaceDefaultArgs instead
      */
-    export type EventArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = EventDefaultArgs<ExtArgs>
+    export type MaintenaceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = MaintenaceDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany
