@@ -1,5 +1,6 @@
 "use client";
-
+import { PaginatedResult, createPaginator } from "prisma-pagination";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -8,12 +9,10 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-import { PaginatedResult, createPaginator } from "prisma-pagination";
-import { Pagination } from "@nextui-org/pagination";
-import { useState } from "react";
 
 import prisma from "@/lib/prisma";
 import { Device, Prisma } from "@/lib/db/client";
+import ModelTable from "@/app/devices/table";
 
 async function getClients(page: number): Promise<PaginatedResult<Device>> {
   const paginate = createPaginator({ page: page });
@@ -22,8 +21,7 @@ async function getClients(page: number): Promise<PaginatedResult<Device>> {
 }
 
 const ClientsPage = async () => {
-  const [page, setPage] = useState(1);
-  const { data, meta } = await getClients(page);
+  const { data, meta } = await getClients(1);
 
   return (
     <div>
@@ -31,39 +29,31 @@ const ClientsPage = async () => {
       <Table
         aria-label="Clients Table"
         bottomContent={
-          <div className="flex w-full justify-center">
-            <Pagination
-              isCompact
-              showControls
-              showShadow
-              color="primary"
-              page={page}
-              total={meta.lastPage}
-              onChange={(newPage) => setPage(newPage)}
-            />
-          </div>
+          <>
+            <div className="flex w-full justify-center">
+              <ModelTable data={data} meta={meta} />
+            </div>
+          </>
         }
-        className={"w-100 h-100"}
-      >
-        <TableHeader>
-          <TableColumn>Client ID</TableColumn>
-          <TableColumn>Device SN</TableColumn>
-          <TableColumn> Battery Level</TableColumn>
-          <TableColumn>DLC Electrode</TableColumn>
-        </TableHeader>
-        <TableBody>
-          {data.map((client) => (
-            <TableRow key={client.clientId}>
-              <TableCell>{client.clientId}</TableCell>
-
-              <TableCell>{client.deviceId}</TableCell>
-              <TableCell>{client.batteryLevel}</TableCell>
-
-              <TableCell>{client.dlcElectrode}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      />
+      <TableHeader>
+        <TableColumn>Device ID</TableColumn>
+        <TableColumn>Device SN</TableColumn>
+        <TableColumn>Type</TableColumn>
+        <TableColumn>Battery Level</TableColumn>
+        <TableColumn>DLC Electrode</TableColumn>
+      </TableHeader>
+      <TableBody>
+        {data.map((device) => (
+          <TableRow key={device.deviceId}>
+            <TableCell>{device.deviceId}</TableCell>
+            <TableCell>{device.Sn}</TableCell>
+            <TableCell>{device.type}</TableCell>
+            <TableCell>{device.batteryLevel}</TableCell>
+            <TableCell>{device.dlcElectrode}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
     </div>
   );
 };

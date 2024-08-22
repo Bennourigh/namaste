@@ -1,5 +1,6 @@
 "use client";
-
+import { PaginatedResult, createPaginator } from "prisma-pagination";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -8,42 +9,26 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-import { PaginatedResult, createPaginator } from "prisma-pagination";
-import { Pagination } from "@nextui-org/pagination";
-import { useState } from "react";
 
 import prisma from "@/lib/prisma";
 import { Client, Prisma } from "@/lib/db/client";
+import ModelTable from "@/app/clients/table";
 
 async function getClients(page: number): Promise<PaginatedResult<Client>> {
-  let x = await prisma.client;
   const paginate = createPaginator({ page: page });
 
-  return paginate<Client, Prisma.ClientFindManyArgs>(x, {});
+  return paginate<Client, Prisma.ClientFindManyArgs>(prisma.client, {});
 }
 
 const ClientsPage = async () => {
-  const [page, setPage] = useState(1);
-  const { data, meta } = await getClients(page);
+  const { data, meta } = await getClients(1);
 
   return (
     <div>
       <h1>Clients</h1>
       <Table
         aria-label="Clients Table"
-        bottomContent={
-          <div className="flex w-full justify-center">
-            <Pagination
-              isCompact
-              showControls
-              showShadow
-              color="primary"
-              page={page}
-              total={meta.lastPage}
-              onChange={(newPage) => setPage(newPage)}
-            />
-          </div>
-        }
+        bottomContent={<ModelTable data={data} meta={meta} />}
         className={"w-100 h-100"}
       >
         <TableHeader>

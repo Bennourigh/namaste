@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "@nextui-org/button";
 import { FieldValues } from "react-hook-form";
 import { useDisclosure } from "@nextui-org/react";
@@ -33,7 +33,7 @@ export default function OpenModelModalFormButton<T extends FieldValues>({
   return (
     <>
       <Button color="primary" onPress={onOpen}>
-        Close
+        {formFields.toString()}
       </Button>
 
       {isOpen && (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Client, Device } from "@/lib/db/client";
+import { Device } from "@/lib/db/client";
 import OpenModelModalFormButton from "@/components/model-modal.generic";
 
 const ClientsPage = async () => {
